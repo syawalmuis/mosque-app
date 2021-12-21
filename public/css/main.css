@@ -1,0 +1,7 @@
+#__card_responsive {
+    padding: 6vh 0;
+}
+
+#__card_responsive #__terbilang {
+    text-transform: capitalize;
+}
