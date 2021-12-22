@@ -25,6 +25,7 @@ const __thisMonth = () => {
     fetch(`${__url}/sumbangan/month`)
         .then(response => response.json())
         .then(result => {
+            // console.log(result);
             __total.innerHTML = `Rp. ${result.data[0]}`;
             __terbilang.innerHTML = `${result.data[1]}`;
             __filter.innerHTML = '| Bulan ini';

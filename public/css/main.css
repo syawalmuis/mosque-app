@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 #__card_responsive {
     padding: 6vh 0;
 }
 
 #__card_responsive #__terbilang {
     text-transform: capitalize;
+}
+
+#__card_login {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#__card_login:hover {
+    box-shadow: 2px 2px 7px 5px rgb(148, 142, 142);
 }

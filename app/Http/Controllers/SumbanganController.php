@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sumbangan;
+use GrahamCampbell\ResultType\Result;
 use Illuminate\Http\Request;
 
 
@@ -120,13 +121,13 @@ class SumbanganController extends Controller
             "data" => [$total, $this->func->terbilang($sum)]
         ];
         if ($sum === 0) {
-            return response()->json([
+            return [
                 "status" => 'ok',
                 "message" => "data per hari ini berhasil di jumlahkan",
                 "data" => [$total, "Belum ada sumbangan masuk hari ini"]
-            ]);
+            ];
         }
-        return response()->json($result);
+        return $result;
     }
 
     public function month()
@@ -143,10 +144,10 @@ class SumbanganController extends Controller
         $total = number_format($sum);
         // mengembalikan nilai dalam bentuk json
         $result = [
-            "status" => 'ok',
-            "message" => "data per hari ini berhasil di jumlahkan",
+            "status" => "ok",
+            "message" => "data per bulan ini berhasil di jumlahkan",
             "data" => [$total, $this->func->terbilang($sum)]
         ];
-        return response()->json($result);
+        return $result;
     }
 }

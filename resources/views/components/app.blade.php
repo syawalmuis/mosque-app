@@ -60,9 +60,9 @@
 
 <body>
     <input type="hidden" name="__url" id="__url" value="{{ url('/') }}">
+    @if (Auth::check())
     @include('layouts.header')
     @include('layouts.sidebar')
-
     <main id="main" class="main">
 
         <div class="pagetitle">
@@ -90,6 +90,9 @@
         </section>
 
     </main><!-- End #main -->
+    @else
+    {{$slot}}
+    @endif
 
     <!-- Vendor JS Files -->
     <script src="{{asset('assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
