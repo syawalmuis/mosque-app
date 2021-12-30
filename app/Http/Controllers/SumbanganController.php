@@ -23,8 +23,9 @@ class SumbanganController extends Controller
 
     public function index()
     {
-        $data = Sumbangan::where('updated_at', 'LIKE', $this->date() . "%")->get();
-        return view('home', []);
+        // $data = Sumbangan::where('updated_at', 'LIKE', $this->date() . "%")->get();
+        // return view('home', []);
+        return view('sumbangan.index');
     }
 
     public function read()

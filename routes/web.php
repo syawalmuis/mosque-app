@@ -21,9 +21,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/sumbangan/read', [SumbanganController::class, 'read']);
-Route::get('/sumbangan/today', [SumbanganController::class, 'today']);
-Route::get('/sumbangan/month', [SumbanganController::class, 'month']);
-Route::resource('/sumbangan', SumbanganController::class);
+Route::middleware('auth')->group(function () {
+    Route::get('/sumbangan/read', [SumbanganController::class, 'read']);
+    Route::get('/sumbangan/today', [SumbanganController::class, 'today']);
+    Route::get('/sumbangan/month', [SumbanganController::class, 'month']);
+    Route::resource('/sumbangan', SumbanganController::class);
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
