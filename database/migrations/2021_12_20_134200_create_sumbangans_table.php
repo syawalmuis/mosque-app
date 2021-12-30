@@ -17,6 +17,7 @@ class CreateSumbangansTable extends Migration
             $table->id();
             $table->string('name');
             $table->bigInteger('value');
+            $table->date('date');
             $table->timestamps();
         });
     }
